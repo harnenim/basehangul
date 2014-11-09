@@ -159,7 +159,7 @@ public class BaseHangul {
 
 		String encoded;
 		byte[] decoded = new byte[0];
-		String charset;
+		String charset; 
 		
 		charset = "UTF-8";
 		System.out.println("==" + charset + "==");
