@@ -156,7 +156,7 @@ public class BaseHangul {
 	public static void main(String[] args) throws Exception {
 		init(); // 현재로썬 디코드를 위해 필수
 		
-		String[] testStr = {"123ab", "1", "123d", "123가나다라"};
+		String[] testStr = {"123ab", "1", "123d", "This is an encoded string"};
 
 		String encoded;
 		byte[] decoded = new byte[0];
@@ -195,11 +195,6 @@ public class BaseHangul {
 		}
 		System.out.println();
 
-		//-------------------------------------------------------//
-		System.out.println("=========================");
-		System.out.println(new String(decode("넥라똔먈늴멥갯놓궂뗐밸뮤뉴뗐뀄굡덜멂똑뚤"), "UTF-8"));
-		System.out.println("=========================\n");
-
 		//----------------------파일 입출력----------------------//
 		String filename = "C:\\BaseHangul\\input";
 		System.out.println("From file \"" + filename + "\"");
@@ -218,6 +213,7 @@ public class BaseHangul {
 		out.write(BOM.getBytes(charset));
 		out.write(decoded);
 		out.close();
+		
 	}
 }
 
@@ -232,8 +228,8 @@ public class BaseHangul {
 꺽먹꼐빎
 123d
 =========
-꺽먹꿉렛두렷깁꽥딩떻륌닷
-123가나다라
+넥라똔먈늴멥갯놓궂뗐밸뮤뉴뗐뀄굡덜멂똑뚤
+This is an encoded string
 =========
 
 ==UTF-16LE==
@@ -246,8 +242,8 @@ public class BaseHangul {
 꺽갇궁게각땟가흐
 123d
 ============
-꺽갇궁게가갓멂깖밧멈메빗
-123가나다라
+네갊됩괵각멜갑가늰감꺄걍각뒨갸됩궁갊냘굇각따갸릴뉩갊냘괠가됩갹릴덛감궁괵각뤄갰릴
+This is an encoded string
 ============
 
 ==EUC-KR==
@@ -260,13 +256,9 @@ public class BaseHangul {
 꺽먹꼐빎
 123d
 ==========
-꺽먹꽹긴룀렉낸닭봐흐흐흐
-123가나다라
-==========
-
-=========================
+넥라똔먈늴멥갯놓궂뗐밸뮤뉴뗐뀄굡덜멂똑뚤
 This is an encoded string
-=========================
+==========
 
 From file "C:\BaseHangul\input"
 Encoding : EUC-KR
