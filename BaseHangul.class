@@ -34,22 +34,22 @@ public class BaseHangul {
 		char[] result = new char[(bytes.length+4)/5*4];
 		int i=0, j=0, c;
 		do {
-			c     = ((int)bytes[i]<<2) & 0b1111111100;
+				  = ((int)bytes[i]<<2) & 0b1111111100;
 			if(++i == bytes.length) { result[j++]=ksc5601[c]; result[j++]='흐'; result[j++]='흐'; result[j++]='흐'; break; }
-			c    += ((int)bytes[i]>>6) & 0b0000000011;
+				 += ((int)bytes[i]>>6) & 0b0000000011;
 			result[j++]=ksc5601[c];
 
-			c     = ((int)bytes[i]<<4) & 0b1111110000;
+			c	  = ((int)bytes[i]<<4) & 0b1111110000;
 			if(++i == bytes.length) { result[j++]=ksc5601[c]; result[j++]='흐'; result[j++]='흐'; break; }
-			c    += ((int)bytes[i]>>4) & 0b0000001111;
+			c	 += ((int)bytes[i]>>4) & 0b0000001111;
 			result[j++]=ksc5601[c];
 
-			c     = ((int)bytes[i]<<6) & 0b1111000000;
+			c	  = ((int)bytes[i]<<6) & 0b1111000000;
 			if(++i == bytes.length) { result[j++]=ksc5601[c]; result[j++]='흐'; break; }
-			c    += ((int)bytes[i]>>2) & 0b0000111111;
+			c	 += ((int)bytes[i]>>2) & 0b0000111111;
 			result[j++]=ksc5601[c];
 
-			c     = ((int)bytes[i]<<8) & 0b1100000000;
+			c	  = ((int)bytes[i]<<8) & 0b1100000000;
 			if(++i == bytes.length)
 				c = (c>>8) + 1024;
 			else
@@ -159,7 +159,7 @@ public class BaseHangul {
 
 		String encoded;
 		byte[] decoded = new byte[0];
-		String charset; 
+		String charset;
 		
 		charset = "UTF-8";
 		System.out.println("==" + charset + "==");
