@@ -195,6 +195,11 @@ public class BaseHangul {
 		}
 		System.out.println();
 
+		//-------------------------------------------------------//
+		System.out.println("=========================");
+		System.out.println(new String(decode("넥라똔먈늴멥갯놓궂뗐밸뮤뉴뗐뀄굡덜멂똑뚤"), "UTF-8"));
+		System.out.println("=========================\n");
+
 		//----------------------파일 입출력----------------------//
 		String filename = "C:\\BaseHangul\\input";
 		System.out.println("From file \"" + filename + "\"");
@@ -258,6 +263,10 @@ public class BaseHangul {
 꺽먹꽹긴룀렉낸닭봐흐흐흐
 123가나다라
 ==========
+
+=========================
+This is an encoded string
+=========================
 
 From file "C:\BaseHangul\input"
 Encoding : EUC-KR
