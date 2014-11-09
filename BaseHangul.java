@@ -50,7 +50,7 @@ public class BaseHangul {
 		if(str.length()==0)  return new byte[0]; // 데이터 없음
 		if(str.length()%4>0) return new byte[0]; // 정상적인 데이터가 아님
 		
-		str = str.replace('흐', '빙');
+		str = str.replace('흐', '빙'); // '흐'는 범위를 초과하므로 강제로 1028번으로 인식
 		
 		byte[] result = new byte[str.length()/4*5];
 		char[] c = str.toCharArray();
