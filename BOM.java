@@ -4,7 +4,7 @@ import java.io.*;
 
 public class BOM {
 	
-	static final byte[] UTF8	  	= { (byte)0xEF, (byte)0xBB, (byte)0xBF };
+	static final byte[] UTF8   	= { (byte)0xEF, (byte)0xBB, (byte)0xBF };
 	static final byte[] UTF16LE	= { (byte)0xFF, (byte)0xFE };
 	static final byte[] UTF16BE	= { (byte)0xFE, (byte)0xFF };
 
