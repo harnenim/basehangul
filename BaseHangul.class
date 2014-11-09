@@ -35,9 +35,9 @@ public class BaseHangul {
 		char[] result = new char[(bytes.length+4)/5*4];
 		int i=0, j=0, c;
 		do {
-				  = ((int)bytes[i]<<2) & 0b1111111100;
+			c	  = ((int)bytes[i]<<2) & 0b1111111100;
 			if(++i == bytes.length) { result[j++]=ksc5601[c]; result[j++]='흐'; result[j++]='흐'; result[j++]='흐'; break; }
-				 += ((int)bytes[i]>>6) & 0b0000000011;
+			c	 += ((int)bytes[i]>>6) & 0b0000000011;
 			result[j++]=ksc5601[c];
 
 			c	  = ((int)bytes[i]<<4) & 0b1111110000;
